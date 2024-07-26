@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d2aa5501a570e9a8ecb31ef7f506e28e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+                     <div style="position: fixed; 
+                                 top: 10px; left: 50px; width: 100%;
+                                 text-align: center; font-size: 20px; z-index:9999;">
+                                 <b>Hispanos/Latinos en Rhode Island por Condados</b>
+                     </div>
+                     
+    
+                     <div style="position: fixed; 
+                                 bottom: 10px; left: 50px; width: 100%;
+                                 text-align: left; font-size: 14px; z-index:9999;">
+                                 <b>Elaborado por: Arturo Nicolás Díaz García</b>
+                     </div>
+                     
+    
+                     <div style="position: fixed; 
+                                 bottom: 50px; left: 10px; width: 250px; height: auto; 
+                                 background-color: white; padding: 10px; border: 2px solid black; 
+                                 z-index:9999;">
+                                 <h4 style="margin-top: 0;">Número de Hispanos/Latinos:</h4>
+                                 <div style="display: flex; flex-direction: column;">
+        
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #fff5f0; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>1 - 100</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #fee0d2; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>100 - 500</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #fc9272; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>500 - 1000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #fb6a4a; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>1000 - 5000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #ef3b2c; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>5000 - 10000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #a50f15; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>10000 - 50000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #67000d; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>50000 - 100000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #190003; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>100000 - 1000000</span>
+                </div>
+            
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <div style="background-color: #050001; width: 30px; height: 15px; border: 1px solid black; margin-right: 5px;"></div>
+                    <span>1000000 - Más de 1000000</span>
+                </div>
+            
+                                 </div>
+                     </div>
+                     
+    
+            <div class="folium-map" id="map_d2aa5501a570e9a8ecb31ef7f506e28e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d2aa5501a570e9a8ecb31ef7f506e28e = L.map(
+                "map_d2aa5501a570e9a8ecb31ef7f506e28e",
+                {
+                    center: [41.65649846536553, -71.46408867458781],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d55bdb9a92673c24846b7c853a611e83 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d55bdb9a92673c24846b7c853a611e83.addTo(map_d2aa5501a570e9a8ecb31ef7f506e28e);
+        
+    
+        function geo_json_55a0cac88ca8e8bd122237d727e7a247_styler(feature) {
+            switch(feature.id) {
+                case "2277": case "2281": 
+                    return {"color": "black", "dashArray": "5, 5", "fillColor": "#fb6a4aff", "fillOpacity": 0.9, "weight": 2};
+                case "2278": case "2279": 
+                    return {"color": "black", "dashArray": "5, 5", "fillColor": "#ef3b2cff", "fillOpacity": 0.9, "weight": 2};
+                default:
+                    return {"color": "black", "dashArray": "5, 5", "fillColor": "#190003ff", "fillOpacity": 0.9, "weight": 2};
+            }
+        }
+
+        function geo_json_55a0cac88ca8e8bd122237d727e7a247_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_55a0cac88ca8e8bd122237d727e7a247 = L.geoJson(null, {
+                onEachFeature: geo_json_55a0cac88ca8e8bd122237d727e7a247_onEachFeature,
+            
+                style: geo_json_55a0cac88ca8e8bd122237d727e7a247_styler,
+        });
+
+        function geo_json_55a0cac88ca8e8bd122237d727e7a247_add (data) {
+            geo_json_55a0cac88ca8e8bd122237d727e7a247
+                .addData(data);
+        }
+            geo_json_55a0cac88ca8e8bd122237d727e7a247_add({"bbox": [-71.862772, 41.146339, -71.12057, 42.018798], "features": [{"bbox": [-71.3621525696299, 41.636853, -71.224798, 41.7761572941963], "geometry": {"coordinates": [[[-71.3621525696299, 41.7563095778824, 0.0], [-71.360134, 41.749494, 0.0], [-71.3553095594246, 41.7467674899196, 0.0], [-71.35229, 41.745061, 0.0], [-71.344447, 41.736193, 0.0], [-71.336131, 41.724959, 0.0], [-71.323231515559, 41.724262303149, 0.0], [-71.31482, 41.723808, 0.0], [-71.305759, 41.718662, 0.0], [-71.2953439306392, 41.7072055669443, 0.0], [-71.291217, 41.702666, 0.0], [-71.293119, 41.688347, 0.0], [-71.298935, 41.681524, 0.0], [-71.302627, 41.681747, 0.0], [-71.306095, 41.672575, 0.0], [-71.303746, 41.654788, 0.0], [-71.301396, 41.649978, 0.0], [-71.299159, 41.649531, 0.0], [-71.2949806812448, 41.6456960093985, 0.0], [-71.2901512815459, 41.6412634365047, 0.0], [-71.285346, 41.636853, 0.0], [-71.272692, 41.638535, 0.0], [-71.2698691597587, 41.6417449354172, 0.0], [-71.267055, 41.644945, 0.0], [-71.254697, 41.649059, 0.0], [-71.253416, 41.660593, 0.0], [-71.24155, 41.667205, 0.0], [-71.235352, 41.672134, 0.0], [-71.2364820310652, 41.6768367705434, 0.0], [-71.237635, 41.681635, 0.0], [-71.245335, 41.694855, 0.0], [-71.2428492200865, 41.6965081809783, 0.0], [-71.240991, 41.697744, 0.0], [-71.227875, 41.705498, 0.0], [-71.224798, 41.710498, 0.0], [-71.225709, 41.711603, 0.0], [-71.2262389298232, 41.7122074078117, 0.0], [-71.261392, 41.752301, 0.0], [-71.2844017716869, 41.762010280821, 0.0], [-71.3163878442731, 41.7755072318263, 0.0], [-71.317795, 41.776101, 0.0], [-71.3179242335629, 41.7761572941963, 0.0], [-71.322678, 41.772592, 0.0], [-71.324717, 41.771201, 0.0], [-71.332659, 41.765715, 0.0], [-71.345785, 41.75928, 0.0], [-71.3621525696299, 41.7563095778824, 0.0]]], "type": "Polygon"}, "id": "2277", "properties": {"AFFGEOID": "0500000US44001", "ALAND": "62500772", "AWATER": "53359134", "BASENAME": "Bristol", "CONCITNS": null, "COUNTYFP": "001", "COUNTYNS": "01219777", "COUSUBNS": null, "FILEID": "PLST", "GEOID": "44001", "HU100": 21504, "INTPTLAT": 41.7068397, "INTPTLON": -71.2866874, "LOGRECNO": "0000002", "LSAD": "06", "LSADC": "06", "NAME": "Bristol County", "NAMELSAD": "Bristol County", "Name": "Bristol", "P0020001": 50793, "P0020002": 1943, "PLACENS": null, "POP100": 50793, "STATEFP": "44", "STATENAME": "Rhode Island", "STATENS": "01219835", "STATE_NAME": "Rhode Island", "STUSAB": "RI", "STUSPS": "RI", "SUBMCDNS": null, "SUMLEV": "050", "ZCTA": null, "altitudeMode": "clampToGround", "begin": null, "color": "#fb6a4aff", "description": "\u003ccenter\u003e\u003ctable\u003e\u003ctr\u003e\u003cth colspan=\u00272\u0027 align=\u0027center\u0027\u003e\u003cem\u003eAttributes\u003c/em\u003e\u003c/th\u003e\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATEFP\u003c/th\u003e\n\u003ctd\u003e44\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eCOUNTYFP\u003c/th\u003e\n\u003ctd\u003e001\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eCOUNTYNS\u003c/th\u003e\n\u003ctd\u003e01219777\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAFFGEOID\u003c/th\u003e\n\u003ctd\u003e0500000US44001\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eGEOID\u003c/th\u003e\n\u003ctd\u003e44001\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eNAME\u003c/th\u003e\n\u003ctd\u003eBristol\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eNAMELSAD\u003c/th\u003e\n\u003ctd\u003eBristol County\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eSTUSPS\u003c/th\u003e\n\u003ctd\u003eRI\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATE_NAME\u003c/th\u003e\n\u003ctd\u003eRhode Island\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eLSAD\u003c/th\u003e\n\u003ctd\u003e06\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eALAND\u003c/th\u003e\n\u003ctd\u003e62500772\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAWATER\u003c/th\u003e\n\u003ctd\u003e53359134\u003c/td\u003e\n\u003c/tr\u003e\u003c/table\u003e\u003c/center\u003e", "drawOrder": null, "end": null, "extrude": 0, "icon": null, "tessellate": 1, "timestamp": null, "visibility": 1}, "type": "Feature"}, {"bbox": [-71.7896921119938, 41.5968521603427, -71.363937, 41.768321], "geometry": {"coordinates": [[[-71.7896921119938, 41.7251983396573, 0.0], [-71.789678, 41.724734, 0.0], [-71.7869988956813, 41.6561173870817, 0.0], [-71.786994, 41.655992, 0.0], [-71.7876366458895, 41.6399171462982, 0.0], [-71.787855198595, 41.6344503677445, 0.0], [-71.789356, 41.59691, 0.0], [-71.7893586727423, 41.5968521603427, 0.0], [-71.658757, 41.598693, 0.0], [-71.643983, 41.600979, 0.0], [-71.544807, 41.601993, 0.0], [-71.522429, 41.602566, 0.0], [-71.498095, 41.602653, 0.0], [-71.484427, 41.602591, 0.0], [-71.488031, 41.615213, 0.0], [-71.467844, 41.634165, 0.0], [-71.451366, 41.629455, 0.0], [-71.442508, 41.645818, 0.0], [-71.4086362699643, 41.6538193091689, 0.0], [-71.409302, 41.662643, 0.0], [-71.425452, 41.670785, 0.0], [-71.430038, 41.667541, 0.0], [-71.442478379197, 41.664840842852, 0.0], [-71.444468, 41.664409, 0.0], [-71.4446192100939, 41.6651258293773, 0.0], [-71.4492824598884, 41.6872325178876, 0.0], [-71.449318, 41.687401, 0.0], [-71.445923, 41.691144, 0.0], [-71.441896, 41.690025, 0.0], [-71.443082, 41.688303, 0.0], [-71.441336, 41.686446, 0.0], [-71.418069, 41.684208, 0.0], [-71.4015669618488, 41.6841408356613, 0.0], [-71.390551, 41.684096, 0.0], [-71.389432, 41.683425, 0.0], [-71.390775, 41.680629, 0.0], [-71.38988, 41.671903, 0.0], [-71.382049, 41.667317, 0.0], [-71.37791, 41.666646, 0.0], [-71.372988, 41.672575, 0.0], [-71.365717, 41.694947, 0.0], [-71.365717, 41.711615, 0.0], [-71.3652079860121, 41.7132664358317, 0.0], [-71.363937, 41.71739, 0.0], [-71.3725294505984, 41.7202943942723, 0.0], [-71.376534, 41.721648, 0.0], [-71.3795677212754, 41.7254609765188, 0.0], [-71.38105, 41.727324, 0.0], [-71.3808661790703, 41.7362285020966, 0.0], [-71.380812, 41.738853, 0.0], [-71.380574, 41.745947, 0.0], [-71.38458238293, 41.7574799334983, 0.0], [-71.384733, 41.757602, 0.0], [-71.399577, 41.768321, 0.0], [-71.405203, 41.76761, 0.0], [-71.417586, 41.762254, 0.0], [-71.419078, 41.761885, 0.0], [-71.434069, 41.760936, 0.0], [-71.440662, 41.757795, 0.0], [-71.446538, 41.748887, 0.0], [-71.444116, 41.740636, 0.0], [-71.451278, 41.739704, 0.0], [-71.45285, 41.734335, 0.0], [-71.460249, 41.732278, 0.0], [-71.460599, 41.732268, 0.0], [-71.476971, 41.731752, 0.0], [-71.48391, 41.731603, 0.0], [-71.497849, 41.73115, 0.0], [-71.534286, 41.730171, 0.0], [-71.547353, 41.731203, 0.0], [-71.562938, 41.729672, 0.0], [-71.668434, 41.72747, 0.0], [-71.700584, 41.726694, 0.0], [-71.7896921119938, 41.7251983396573, 0.0]]], "type": "Polygon"}, "id": "2278", "properties": {"AFFGEOID": "0500000US44003", "ALAND": "436584631", "AWATER": "50690252", "BASENAME": "Kent", "CONCITNS": null, "COUNTYFP": "003", "COUNTYNS": "01219778", "COUSUBNS": null, "FILEID": "PLST", "GEOID": "44003", "HU100": 76084, "INTPTLAT": 41.675118, "INTPTLON": -71.5802819, "LOGRECNO": "0000003", "LSAD": "06", "LSADC": "06", "NAME": "Kent County", "NAMELSAD": "Kent County", "Name": "Kent", "P0020001": 170363, "P0020002": 9665, "PLACENS": null, "POP100": 170363, "STATEFP": "44", "STATENAME": "Rhode Island", "STATENS": "01219835", "STATE_NAME": "Rhode Island", "STUSAB": "RI", "STUSPS": "RI", "SUBMCDNS": null, "SUMLEV": "050", "ZCTA": null, "altitudeMode": "clampToGround", "begin": null, "color": "#ef3b2cff", "description": "\u003ccenter\u003e\u003ctable\u003e\u003ctr\u003e\u003cth colspan=\u00272\u0027 align=\u0027center\u0027\u003e\u003cem\u003eAttributes\u003c/em\u003e\u003c/th\u003e\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATEFP\u003c/th\u003e\n\u003ctd\u003e44\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eCOUNTYFP\u003c/th\u003e\n\u003ctd\u003e003\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eCOUNTYNS\u003c/th\u003e\n\u003ctd\u003e01219778\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAFFGEOID\u003c/th\u003e\n\u003ctd\u003e0500000US44003\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eGEOID\u003c/th\u003e\n\u003ctd\u003e44003\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eNAME\u003c/th\u003e\n\u003ctd\u003eKent\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eNAMELSAD\u003c/th\u003e\n\u003ctd\u003eKent County\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eSTUSPS\u003c/th\u003e\n\u003ctd\u003eRI\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATE_NAME\u003c/th\u003e\n\u003ctd\u003eRhode Island\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eLSAD\u003c/th\u003e\n\u003ctd\u003e06\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eALAND\u003c/th\u003e\n\u003ctd\u003e436584631\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAWATER\u003c/th\u003e\n\u003ctd\u003e50690252\u003c/td\u003e\n\u003c/tr\u003e\u003c/table\u003e\u003c/center\u003e", "drawOrder": null, "end": null, "extrude": 0, "icon": null, "tessellate": 1, "timestamp": null, "visibility": 1}, "type": "Feature"}, {"bbox": [-71.40056, 41.448596, -71.12057, 41.67509], "geometry": {"coordinates": [[[[-71.36152, 41.464831, 0.0], [-71.362743, 41.460379, 0.0], [-71.351096, 41.450802, 0.0], [-71.337695, 41.448902, 0.0], [-71.32141, 41.4556, 0.0], [-71.312718, 41.454597, 0.0], [-71.312694, 41.451402, 0.0], [-71.311394, 41.450802, 0.0], [-71.304394, 41.454502, 0.0], [-71.295111, 41.48435, 0.0], [-71.285639, 41.487805, 0.0], [-71.2822618630868, 41.4879827184685, 0.0], [-71.264793, 41.488902, 0.0], [-71.252692, 41.485902, 0.0], [-71.245992, 41.481302, 0.0], [-71.246703, 41.47196, 0.0], [-71.24071, 41.474872, 0.0], [-71.236751, 41.483369, 0.0], [-71.237175, 41.486546, 0.0], [-71.238586, 41.486845, 0.0], [-71.240614, 41.500557, 0.0], [-71.2334289412223, 41.5140568056013, 0.0], [-71.229444, 41.521544, 0.0], [-71.227989, 41.528297, 0.0], [-71.234775, 41.532538, 0.0], [-71.236642, 41.535852, 0.0], [-71.23613, 41.574767, 0.0], [-71.2436, 41.587508, 0.0], [-71.2432351415084, 41.5915108421921, 0.0], [-71.240709, 41.619225, 0.0], [-71.2280567270736, 41.6224539091158, 0.0], [-71.21616, 41.62549, 0.0], [-71.212004, 41.62299, 0.0], [-71.2122770662031, 41.6198824669378, 0.0], [-71.212417, 41.61829, 0.0], [-71.212656, 41.610072, 0.0], [-71.20778, 41.60066, 0.0], [-71.20865, 41.571028, 0.0], [-71.213563, 41.545818, 0.0], [-71.200788, 41.514371, 0.0], [-71.206382, 41.499215, 0.0], [-71.199692, 41.495511, 0.0], [-71.19939, 41.491769, 0.0], [-71.190167, 41.484285, 0.0], [-71.190016, 41.478275, 0.0], [-71.196607, 41.464756, 0.0], [-71.196857, 41.461116, 0.0], [-71.194967, 41.459037, 0.0], [-71.19302, 41.457931, 0.0], [-71.170131, 41.463974, 0.0], [-71.167345, 41.471405, 0.0], [-71.140224, 41.485855, 0.0], [-71.141093, 41.489937, 0.0], [-71.136867, 41.493942, 0.0], [-71.12057, 41.497448, 0.0], [-71.1224, 41.522156, 0.0], [-71.131312, 41.592308, 0.0], [-71.131618, 41.593918, 0.0], [-71.137492, 41.602561, 0.0], [-71.140588, 41.605102, 0.0], [-71.14091, 41.607405, 0.0], [-71.141509, 41.616076, 0.0], [-71.140468, 41.623893, 0.0], [-71.135688, 41.628402, 0.0], [-71.135675749492, 41.6285321972593, 0.0], [-71.1347011713227, 41.6388899233839, 0.0], [-71.134484, 41.641198, 0.0], [-71.134478, 41.641262, 0.0], [-71.13267, 41.658744, 0.0], [-71.132888, 41.660102, 0.0], [-71.134688, 41.660502, 0.0], [-71.135188, 41.660502, 0.0], [-71.14587, 41.662795, 0.0], [-71.153989, 41.664102, 0.0], [-71.1621482835032, 41.665578726574, 0.0], [-71.17609, 41.668102, 0.0], [-71.17609, 41.668502, 0.0], [-71.17599, 41.671402, 0.0], [-71.18129, 41.672502, 0.0], [-71.191175, 41.674292, 0.0], [-71.191178, 41.674216, 0.0], [-71.194384, 41.674803, 0.0], [-71.19564, 41.67509, 0.0], [-71.204984, 41.658519, 0.0], [-71.2117707854053, 41.6562010017748, 0.0], [-71.21919, 41.653667, 0.0], [-71.233234, 41.64023, 0.0], [-71.2450808614103, 41.639267542075, 0.0], [-71.251082, 41.63878, 0.0], [-71.2554275033048, 41.6356862860495, 0.0], [-71.271862, 41.623986, 0.0], [-71.275234, 41.619444, 0.0], [-71.2742236702447, 41.6178676421287, 0.0], [-71.272412, 41.615041, 0.0], [-71.273445, 41.60699, 0.0], [-71.285142, 41.577127, 0.0], [-71.288376, 41.573274, 0.0], [-71.2884836215711, 41.5732406008219, 0.0], [-71.294363, 41.571416, 0.0], [-71.3014570726041, 41.5626402449893, 0.0], [-71.303652, 41.559925, 0.0], [-71.310533, 41.54692, 0.0], [-71.313079, 41.534672, 0.0], [-71.3206551509205, 41.5277121155243, 0.0], [-71.330831, 41.518364, 0.0], [-71.330694, 41.507699, 0.0], [-71.3368430086962, 41.5023324744779, 0.0], [-71.341122, 41.498598, 0.0], [-71.343013, 41.495615, 0.0], [-71.327822, 41.482985, 0.0], [-71.327379, 41.476386, 0.0], [-71.335992, 41.469647, 0.0], [-71.34707, 41.47123, 0.0], [-71.36152, 41.464831, 0.0]]], [[[-71.366165, 41.66098, 0.0], [-71.362869, 41.651457, 0.0], [-71.351294, 41.635785, 0.0], [-71.34657, 41.632229, 0.0], [-71.333305, 41.629536, 0.0], [-71.325877, 41.623988, 0.0], [-71.326609, 41.616114, 0.0], [-71.329559, 41.609097, 0.0], [-71.333751, 41.605859, 0.0], [-71.337048, 41.594688, 0.0], [-71.335949, 41.585898, 0.0], [-71.3312, 41.580318, 0.0], [-71.326103, 41.578583, 0.0], [-71.317474, 41.583187, 0.0], [-71.307381, 41.597984, 0.0], [-71.303352, 41.606591, 0.0], [-71.30555, 41.622523, 0.0], [-71.314889, 41.630398, 0.0], [-71.326412, 41.636044, 0.0], [-71.332448, 41.643789, 0.0], [-71.336182, 41.647961, 0.0], [-71.338696, 41.658782, 0.0], [-71.344821, 41.667005, 0.0], [-71.366165, 41.66098, 0.0]]], [[[-71.40056, 41.46094, 0.0], [-71.399568, 41.448596, 0.0], [-71.390275, 41.455043, 0.0], [-71.389284, 41.460605, 0.0], [-71.383586, 41.464782, 0.0], [-71.380947, 41.474561, 0.0], [-71.360403, 41.483121, 0.0], [-71.363292, 41.501952, 0.0], [-71.359868, 41.556308, 0.0], [-71.36356, 41.57086, 0.0], [-71.370194, 41.573963, 0.0], [-71.373618, 41.573214, 0.0], [-71.379021, 41.567772, 0.0], [-71.384478, 41.556736, 0.0], [-71.392137, 41.524468, 0.0], [-71.391005, 41.514578, 0.0], [-71.378914, 41.504948, 0.0], [-71.386511, 41.493071, 0.0], [-71.395927, 41.492215, 0.0], [-71.40056, 41.46094, 0.0]]]], "type": "MultiPolygon"}, "id": "2279", "properties": {"AFFGEOID": "0500000US44005", "ALAND": "265293780", "AWATER": "547001789", "BASENAME": "Newport", "CONCITNS": null, "COUNTYFP": "005", "COUNTYNS": "01219779", "COUSUBNS": null, "FILEID": "PLST", "GEOID": "44005", "HU100": 43422, "INTPTLAT": 41.5010449, "INTPTLON": -71.2830626, "LOGRECNO": "0000004", "LSAD": "06", "LSADC": "06", "NAME": "Newport County", "NAMELSAD": "Newport County", "Name": "Newport", "P0020001": 85643, "P0020002": 5592, "PLACENS": null, "POP100": 85643, "STATEFP": "44", "STATENAME": "Rhode Island", "STATENS": "01219835", "STATE_NAME": "Rhode Island", "STUSAB": "RI", "STUSPS": "RI", "SUBMCDNS": null, "SUMLEV": "050", "ZCTA": null, "altitudeMode": "clampToGround", "begin": null, "color": "#ef3b2cff", "description": "\u003ccenter\u003e\u003ctable\u003e\u003ctr\u003e\u003cth colspan=\u00272\u0027 align=\u0027center\u0027\u003e\u003cem\u003eAttributes\u003c/em\u003e\u003c/th\u003e\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATEFP\u003c/th\u003e\n\u003ctd\u003e44\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eCOUNTYFP\u003c/th\u003e\n\u003ctd\u003e005\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eCOUNTYNS\u003c/th\u003e\n\u003ctd\u003e01219779\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAFFGEOID\u003c/th\u003e\n\u003ctd\u003e0500000US44005\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eGEOID\u003c/th\u003e\n\u003ctd\u003e44005\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eNAME\u003c/th\u003e\n\u003ctd\u003eNewport\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eNAMELSAD\u003c/th\u003e\n\u003ctd\u003eNewport County\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eSTUSPS\u003c/th\u003e\n\u003ctd\u003eRI\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATE_NAME\u003c/th\u003e\n\u003ctd\u003eRhode Island\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eLSAD\u003c/th\u003e\n\u003ctd\u003e06\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eALAND\u003c/th\u003e\n\u003ctd\u003e265293780\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAWATER\u003c/th\u003e\n\u003ctd\u003e547001789\u003c/td\u003e\n\u003c/tr\u003e\u003c/table\u003e\u003c/center\u003e", "drawOrder": null, "end": null, "extrude": 0, "icon": null, "tessellate": 1, "timestamp": null, "visibility": 1}, "type": "Feature"}, {"bbox": [-71.799242, 41.7251983396573, -71.3179242335629, 42.018798], "geometry": {"coordinates": [[[-71.799242, 42.008065, 0.0], [-71.797922, 41.935395, 0.0], [-71.7971589425621, 41.9162639874898, 0.0], [-71.7946917826635, 41.854408530038, 0.0], [-71.7944823560536, 41.8491578858595, 0.0], [-71.794161, 41.841101, 0.0], [-71.794161, 41.840141, 0.0], [-71.792786, 41.80867, 0.0], [-71.792767, 41.807001, 0.0], [-71.791258063576, 41.774496473912, 0.0], [-71.791062, 41.770273, 0.0], [-71.7896921119938, 41.7251983396573, 0.0], [-71.700584, 41.726694, 0.0], [-71.668434, 41.72747, 0.0], [-71.562938, 41.729672, 0.0], [-71.547353, 41.731203, 0.0], [-71.534286, 41.730171, 0.0], [-71.497849, 41.73115, 0.0], [-71.48391, 41.731603, 0.0], [-71.476971, 41.731752, 0.0], [-71.460599, 41.732268, 0.0], [-71.460249, 41.732278, 0.0], [-71.45285, 41.734335, 0.0], [-71.451278, 41.739704, 0.0], [-71.444116, 41.740636, 0.0], [-71.446538, 41.748887, 0.0], [-71.440662, 41.757795, 0.0], [-71.434069, 41.760936, 0.0], [-71.419078, 41.761885, 0.0], [-71.417586, 41.762254, 0.0], [-71.405203, 41.76761, 0.0], [-71.399577, 41.768321, 0.0], [-71.384733, 41.757602, 0.0], [-71.38458238293, 41.7574799334983, 0.0], [-71.385566, 41.76031, 0.0], [-71.3855062745127, 41.7673374186024, 0.0], [-71.385495, 41.768664, 0.0], [-71.390831, 41.778833, 0.0], [-71.390557, 41.783708, 0.0], [-71.3824715642505, 41.7850991833895, 0.0], [-71.381287, 41.785303, 0.0], [-71.3716853333333, 41.7833826666667, 0.0], [-71.371542, 41.783354, 0.0], [-71.3663143294948, 41.7785890561345, 0.0], [-71.365125, 41.777505, 0.0], [-71.36465, 41.764742, 0.0], [-71.3625123288918, 41.7575242832024, 0.0], [-71.3621525696299, 41.7563095778824, 0.0], [-71.345785, 41.75928, 0.0], [-71.332659, 41.765715, 0.0], [-71.324717, 41.771201, 0.0], [-71.322678, 41.772592, 0.0], [-71.3179242335629, 41.7761572941963, 0.0], [-71.327896, 41.780501, 0.0], [-71.329396, 41.7826, 0.0], [-71.329296, 41.7868, 0.0], [-71.332196, 41.7923, 0.0], [-71.333896, 41.7945, 0.0], [-71.335797, 41.7948, 0.0], [-71.339297, 41.7963, 0.0], [-71.340697, 41.7983, 0.0], [-71.340797, 41.8002, 0.0], [-71.3401734253394, 41.8019460090498, 0.0], [-71.339297, 41.8044, 0.0], [-71.339297, 41.8065, 0.0], [-71.338897, 41.8083, 0.0], [-71.339197, 41.809, 0.0], [-71.347197, 41.8231, 0.0], [-71.344897, 41.828, 0.0], [-71.339597, 41.832, 0.0], [-71.337597, 41.8337, 0.0], [-71.335197, 41.8355, 0.0], [-71.341797, 41.8437, 0.0], [-71.342198, 41.8448, 0.0], [-71.3344939886823, 41.8612394827533, 0.0], [-71.333997, 41.8623, 0.0], [-71.3374129679819, 41.871993895317, 0.0], [-71.3378288661725, 41.873174138675, 0.0], [-71.340798, 41.8816, 0.0], [-71.339298, 41.893399, 0.0], [-71.339298, 41.893599, 0.0], [-71.338698, 41.898399, 0.0], [-71.3387624937221, 41.8983911691788, 0.0], [-71.3397631896385, 41.8982696647821, 0.0], [-71.352699, 41.896699, 0.0], [-71.3545188256255, 41.8965170174374, 0.0], [-71.354699, 41.896499, 0.0], [-71.362499, 41.895599, 0.0], [-71.364699, 41.895399, 0.0], [-71.365399, 41.895299, 0.0], [-71.370999, 41.894599, 0.0], [-71.373799, 41.894399, 0.0], [-71.3766, 41.893999, 0.0], [-71.3815293543911, 41.8932257679386, 0.0], [-71.3817, 41.893199, 0.0], [-71.3817, 41.8937517472527, 0.0], [-71.3817, 41.9146596532258, 0.0], [-71.3817, 41.914816, 0.0], [-71.3817, 41.922699, 0.0], [-71.3816, 41.922899, 0.0], [-71.381401, 41.964799, 0.0], [-71.381501, 41.966699, 0.0], [-71.3814657108006, 41.9850843199885, 0.0], [-71.381401, 42.018798, 0.0], [-71.4243569233817, 42.0182180239873, 0.0], [-71.4581035191943, 42.0177623891285, 0.0], [-71.498258301062, 42.0172202331592, 0.0], [-71.499905, 42.017198, 0.0], [-71.500905, 42.017098, 0.0], [-71.5020555032736, 42.0170108439625, 0.0], [-71.527306, 42.015098, 0.0], [-71.527606, 42.014998, 0.0], [-71.5291173605566, 42.0149668545684, 0.0], [-71.559439, 42.014342, 0.0], [-71.576908, 42.014098, 0.0], [-71.5868638963374, 42.0138688220074, 0.0], [-71.6067340253166, 42.0134114250923, 0.0], [-71.6453334734301, 42.0125228919322, 0.0], [-71.6808758163105, 42.0117047312646, 0.0], [-71.76601, 42.009745, 0.0], [-71.799242, 42.008065, 0.0]]], "type": "Polygon"}, "id": "2280", "properties": {"AFFGEOID": "0500000US44007", "ALAND": "1060552463", "AWATER": "67870199", "BASENAME": "Providence", "CONCITNS": null, "COUNTYFP": "007", "COUNTYNS": "01219781", "COUSUBNS": null, "FILEID": "PLST", "GEOID": "44007", "HU100": 276770, "INTPTLAT": 41.8697678, "INTPTLON": -71.5786246, "LOGRECNO": "0000005", "LSAD": "06", "LSADC": "06", "NAME": "Providence County", "NAMELSAD": "Providence County", "Name": "Providence", "P0020001": 660741, "P0020002": 160323, "PLACENS": null, "POP100": 660741, "STATEFP": "44", "STATENAME": "Rhode Island", "STATENS": "01219835", "STATE_NAME": "Rhode Island", "STUSAB": "RI", "STUSPS": "RI", "SUBMCDNS": null, "SUMLEV": "050", "ZCTA": null, "altitudeMode": "clampToGround", "begin": null, "color": "#190003ff", "description": "\u003ccenter\u003e\u003ctable\u003e\u003ctr\u003e\u003cth colspan=\u00272\u0027 align=\u0027center\u0027\u003e\u003cem\u003eAttributes\u003c/em\u003e\u003c/th\u003e\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATEFP\u003c/th\u003e\n\u003ctd\u003e44\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eCOUNTYFP\u003c/th\u003e\n\u003ctd\u003e007\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eCOUNTYNS\u003c/th\u003e\n\u003ctd\u003e01219781\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAFFGEOID\u003c/th\u003e\n\u003ctd\u003e0500000US44007\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eGEOID\u003c/th\u003e\n\u003ctd\u003e44007\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eNAME\u003c/th\u003e\n\u003ctd\u003eProvidence\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eNAMELSAD\u003c/th\u003e\n\u003ctd\u003eProvidence County\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eSTUSPS\u003c/th\u003e\n\u003ctd\u003eRI\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATE_NAME\u003c/th\u003e\n\u003ctd\u003eRhode Island\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eLSAD\u003c/th\u003e\n\u003ctd\u003e06\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eALAND\u003c/th\u003e\n\u003ctd\u003e1060552463\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAWATER\u003c/th\u003e\n\u003ctd\u003e67870199\u003c/td\u003e\n\u003c/tr\u003e\u003c/table\u003e\u003c/center\u003e", "drawOrder": null, "end": null, "extrude": 0, "icon": null, "tessellate": 1, "timestamp": null, "visibility": 1}, "type": "Feature"}, {"bbox": [-71.862772, 41.146339, -71.40377, 41.6538193091689], "geometry": {"coordinates": [[[[-71.613133, 41.160281, 0.0], [-71.611706, 41.153239, 0.0], [-71.599993, 41.146932, 0.0], [-71.5937, 41.146339, 0.0], [-71.551953, 41.151718, 0.0], [-71.547051, 41.153684, 0.0], [-71.543872, 41.161321, 0.0], [-71.544446, 41.164912, 0.0], [-71.550226, 41.166787, 0.0], [-71.560969, 41.176186, 0.0], [-71.565752, 41.184373, 0.0], [-71.564119, 41.195372, 0.0], [-71.557459, 41.204542, 0.0], [-71.554067, 41.212957, 0.0], [-71.555006, 41.216822, 0.0], [-71.561093, 41.224207, 0.0], [-71.573785, 41.228436, 0.0], [-71.576661, 41.224434, 0.0], [-71.577301, 41.21471, 0.0], [-71.580228, 41.204837, 0.0], [-71.58955, 41.196557, 0.0], [-71.594994, 41.188392, 0.0], [-71.605565, 41.182139, 0.0], [-71.613133, 41.160281, 0.0]]], [[[-71.862109, 41.316612, 0.0], [-71.862772, 41.309791, 0.0], [-71.857432, 41.306318, 0.0], [-71.833755, 41.315631, 0.0], [-71.785957, 41.325739, 0.0], [-71.773702, 41.327977, 0.0], [-71.7298465320865, 41.3309497187381, 0.0], [-71.72074, 41.331567, 0.0], [-71.701631, 41.336968, 0.0], [-71.68807, 41.342823, 0.0], [-71.624505, 41.36087, 0.0], [-71.5734415180443, 41.3700641452523, 0.0], [-71.555381, 41.373316, 0.0], [-71.5281417025575, 41.376471754877, 0.0], [-71.526724, 41.376636, 0.0], [-71.5232401976725, 41.3761302825414, 0.0], [-71.513401, 41.374702, 0.0], [-71.483295, 41.371722, 0.0], [-71.474918, 41.386104, 0.0], [-71.455371, 41.407962, 0.0], [-71.455845, 41.432986, 0.0], [-71.4546807571771, 41.4339132416741, 0.0], [-71.448948, 41.438479, 0.0], [-71.441199, 41.441602, 0.0], [-71.4404734588792, 41.4415403218089, 0.0], [-71.43767, 41.441302, 0.0], [-71.433612, 41.444995, 0.0], [-71.428652, 41.454158, 0.0], [-71.427935, 41.459529, 0.0], [-71.430926, 41.465655, 0.0], [-71.430744, 41.470636, 0.0], [-71.422991, 41.472682, 0.0], [-71.421157, 41.469888, 0.0], [-71.418404, 41.472652, 0.0], [-71.417621, 41.477934, 0.0], [-71.417957, 41.482073, 0.0], [-71.419971, 41.484758, 0.0], [-71.421425, 41.498629, 0.0], [-71.419580644601, 41.5036532196857, 0.0], [-71.414937, 41.516303, 0.0], [-71.414825, 41.523126, 0.0], [-71.417398, 41.534536, 0.0], [-71.421649, 41.537892, 0.0], [-71.442567, 41.565075, 0.0], [-71.447712, 41.5804, 0.0], [-71.4136281238605, 41.5873196272141, 0.0], [-71.40377, 41.589321, 0.0], [-71.4086362699643, 41.6538193091689, 0.0], [-71.442508, 41.645818, 0.0], [-71.451366, 41.629455, 0.0], [-71.467844, 41.634165, 0.0], [-71.488031, 41.615213, 0.0], [-71.484427, 41.602591, 0.0], [-71.498095, 41.602653, 0.0], [-71.522429, 41.602566, 0.0], [-71.544807, 41.601993, 0.0], [-71.643983, 41.600979, 0.0], [-71.658757, 41.598693, 0.0], [-71.7893586727423, 41.5968521603427, 0.0], [-71.7925957022037, 41.5268010079481, 0.0], [-71.7935683158896, 41.5057530964788, 0.0], [-71.7976736925498, 41.4169104184967, 0.0], [-71.797683, 41.416709, 0.0], [-71.81839, 41.419599, 0.0], [-71.839649, 41.412119, 0.0], [-71.842563, 41.409855, 0.0], [-71.843472, 41.40583, 0.0], [-71.842131, 41.395359, 0.0], [-71.833443, 41.384524, 0.0], [-71.8327992762497, 41.379731248034, 0.0], [-71.831613, 41.370899, 0.0], [-71.837738, 41.363529, 0.0], [-71.835951, 41.353935, 0.0], [-71.829595, 41.344544, 0.0], [-71.839013, 41.334042, 0.0], [-71.860513, 41.320248, 0.0], [-71.862109, 41.316612, 0.0]]]], "type": "MultiPolygon"}, "id": "2281", "properties": {"AFFGEOID": "0500000US44009", "ALAND": "852827573", "AWATER": "604769755", "BASENAME": "Washington", "CONCITNS": null, "COUNTYFP": "009", "COUNTYNS": "01219782", "COUSUBNS": null, "FILEID": "PLST", "GEOID": "44009", "HU100": 65694, "INTPTLAT": 41.396792, "INTPTLON": -71.620282, "LOGRECNO": "0000006", "LSAD": "06", "LSADC": "06", "NAME": "Washington County", "NAMELSAD": "Washington County", "Name": "Washington", "P0020001": 129839, "P0020002": 4578, "PLACENS": null, "POP100": 129839, "STATEFP": "44", "STATENAME": "Rhode Island", "STATENS": "01219835", "STATE_NAME": "Rhode Island", "STUSAB": "RI", "STUSPS": "RI", "SUBMCDNS": null, "SUMLEV": "050", "ZCTA": null, "altitudeMode": "clampToGround", "begin": null, "color": "#fb6a4aff", "description": "\u003ccenter\u003e\u003ctable\u003e\u003ctr\u003e\u003cth colspan=\u00272\u0027 align=\u0027center\u0027\u003e\u003cem\u003eAttributes\u003c/em\u003e\u003c/th\u003e\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATEFP\u003c/th\u003e\n\u003ctd\u003e44\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eCOUNTYFP\u003c/th\u003e\n\u003ctd\u003e009\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eCOUNTYNS\u003c/th\u003e\n\u003ctd\u003e01219782\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAFFGEOID\u003c/th\u003e\n\u003ctd\u003e0500000US44009\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eGEOID\u003c/th\u003e\n\u003ctd\u003e44009\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eNAME\u003c/th\u003e\n\u003ctd\u003eWashington\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eNAMELSAD\u003c/th\u003e\n\u003ctd\u003eWashington County\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eSTUSPS\u003c/th\u003e\n\u003ctd\u003eRI\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eSTATE_NAME\u003c/th\u003e\n\u003ctd\u003eRhode Island\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eLSAD\u003c/th\u003e\n\u003ctd\u003e06\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"#E3E3F3\"\u003e\n\u003cth\u003eALAND\u003c/th\u003e\n\u003ctd\u003e852827573\u003c/td\u003e\n\u003c/tr\u003e\u003ctr bgcolor=\"\"\u003e\n\u003cth\u003eAWATER\u003c/th\u003e\n\u003ctd\u003e604769755\u003c/td\u003e\n\u003c/tr\u003e\u003c/table\u003e\u003c/center\u003e", "drawOrder": null, "end": null, "extrude": 0, "icon": null, "tessellate": 1, "timestamp": null, "visibility": 1}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_55a0cac88ca8e8bd122237d727e7a247.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["STATENAME", "NAME", "P0020002"];
+    let aliases = ["Estado", "Condado", "Cantidad de Hispanos/Latinos"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_55a0cac88ca8e8bd122237d727e7a247.addTo(map_d2aa5501a570e9a8ecb31ef7f506e28e);
+        
+    
+            var layer_control_f40982c9fed7781e1db6bbe5e05fa58c_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_d55bdb9a92673c24846b7c853a611e83,
+                },
+                overlays :  {
+                    "macro_element_55a0cac88ca8e8bd122237d727e7a247" : geo_json_55a0cac88ca8e8bd122237d727e7a247,
+                },
+            };
+            let layer_control_f40982c9fed7781e1db6bbe5e05fa58c = L.control.layers(
+                layer_control_f40982c9fed7781e1db6bbe5e05fa58c_layers.base_layers,
+                layer_control_f40982c9fed7781e1db6bbe5e05fa58c_layers.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_d2aa5501a570e9a8ecb31ef7f506e28e);
+
+        
+</script>
+</html>
