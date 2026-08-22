@@ -43,7 +43,6 @@ This project processes raw demographic data from the **US Decennial Census** and
 
 ## 📊 Visualizations & Maps
 
-> *(Recomendación: Sube capturas de pantalla de tus mapas generados o exportaciones PNG a una carpeta `assets/` o `img/` dentro del repositorio para mostrarlos aquí)*
 
 ### Hispanic Population Distribution (Choropleth)
 <div align="center">
