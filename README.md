@@ -17,9 +17,9 @@ This project processes raw demographic data from the **US Decennial Census** and
 
 ## 🛠️ Tech Stack & Libraries
 
-* **Data Processing & Manipulation:** `Python`, `Pandas`, `NumPy`
-* **Geospatial & GIS:** `GeoPandas`, `Shapely`, `PySAL`
-* **Visualization & Mapping:** `Folium`, `Matplotlib`, `Seaborn`, `Branca`
+* **Data Processing & Manipulation:** `Python`, `Pandas`
+* **Geospatial & GIS:** `GeoPandas`, `Shapely`
+* **Visualization & Mapping:** `Folium`, `Matplotlib`, `Seaborn`
 * **Environment:** `Jupyter Notebook`
 
 ---
@@ -48,7 +48,7 @@ This project processes raw demographic data from the **US Decennial Census** and
 ### Hispanic Population Distribution (Choropleth)
 <div align="center">
   <!-- Reemplaza esta ruta con la ubicación real de tu captura de mapa -->
-  <img src="assets/map_preview.png" width="850" alt="US Hispanic Demographics Map" />
+  <img src="Mapas_Counties_States/Texas_Latinos.png" width="850" alt="US Hispanic Demographics Map" />
 </div>
 
 ---
