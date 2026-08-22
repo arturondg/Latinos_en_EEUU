@@ -47,7 +47,7 @@ This project processes raw demographic data from the **US Decennial Census** and
 ### Hispanic Population Distribution (Choropleth)
 <div align="center">
   <!-- Reemplaza esta ruta con la ubicación real de tu captura de mapa -->
-  <img src="Mapas_Counties_States/Texas_Latinos.png" width="850" alt="US Hispanic Demographics Map" />
+  <img src="Assets/Texas_Latinos.png" width="850" alt="US Hispanic Demographics Map" />
 </div>
 
 ---
