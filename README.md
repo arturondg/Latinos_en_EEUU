@@ -61,9 +61,3 @@ This project processes raw demographic data from the **US Decennial Census** and
 
 ---
 
-## 🚀 How to Run Locally
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/arturondg/Latinos_en_EEUU.git](https://github.com/arturondg/Latinos_en_EEUU.git)
-   cd Latinos_en_EEUU
